@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <style>
+            #container{
+                width:70%;
+                height:60%;
+                display:grid;
+                grid-template-columns: repeat(4,1fr);
+                grid-template-rows: repeat(3,60px);  
+                gap:10px;
+                margin:auto;
+                margin:100px;
+            }
+            #container>div{
+                background-color:rgb(68,68,68);
+                color:white;
+                font-size: 20px;
+                font-weight: bolder;
+                padding-left:20px;
+                padding-top:15px;
+                border-radius: 10px;
+            }
+            #a{
+                grid-column: 1/span 2;
+            }
+            #b{
+                grid-column: 3/span 2;
+            }
+            #d{
+                grid-column: 2/span 3;
+            }
+            #e{
+                grid-column: 1/span 4;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <div id="a">A</div>
+            <div id="b">B</div>
+            <div>C</div>
+            <div id="d">D</div>
+            <div id="e">E</div>
+        </div>
+    </body>
+</html>

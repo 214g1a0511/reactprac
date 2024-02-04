@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            color: teal;
+            text-align: center;
+        }
+#container{
+    border:0px solid red;
+    display: grid;
+    width:20%;
+    
+    grid-template-columns: repeat(4,24%);
+    grid-template-rows: repeat(5,80px);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: auto;
+    gap:10px;
+    padding:50px;
+    
+}
+#container>div{
+    border:0px solid blue;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight:bold ;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+#container>div:nth-child(1){
+    grid-area: 1/1/1/5;
+}
+#container>div:nth-child(5){
+   background-color: black;
+   color:white;
+}
+#container>div:nth-child(9){
+   background-color: black;
+   color:white;
+}
+#container>div:nth-child(13){
+   background-color: black;
+   color:white;
+}
+#container>div:nth-child(16){
+   background-color: black;
+   color:white;
+}
+#container>div:nth-child(17){
+   background-color: black;
+   color:white;
+}
+#container>div:nth-child(14){
+   background-color: #fe0000;
+   color:white;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Calculator</h1>
+    <div id="container">
+        <div id="display"></div>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>+</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>-</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>*</div>
+        <div>c</div>
+        <div>0</div>
+        <div>=</div>
+      <div>/</div>
+
+    </div>
+</body>
+</html>
+<script>
+    let keys=document.querySelectorAll("#container>div")
+    let bag=""
+        keys.forEach(function(el){
+           el.addEventListener("click",mycal);
+            console.log("inside")
+        })
+        function mycal(event){
+            if(bag.length<22){
+                let targetnum=event.target.innerText;
+            
+            
+            if(targetnum=="c"){
+                bag=""
+                document.querySelector("#display").innerText="";
+            }
+            else if(targetnum=="="){
+                if(bag===""){
+                    return
+                }
+                document.querySelector("#display").innerText=eval(bag)
+            }
+            else{
+                bag+=targetnum;
+                document.querySelector("#display").innerText=bag;
+            }
+            if(bag.length==22){
+                alert("limit exceeded")
+            }
+        }
+    }
+</script>

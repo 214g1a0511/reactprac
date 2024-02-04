@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button{
+            background-color: grey;
+            padding:10px;
+            border-radius: 5px;
+            color:white;
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn" onClick="fun()">Mark as complete</button>
+</body>
+</html>
+<script>
+    function fun(){
+        document.getElementById("btn").style.backgroundColor="blue"
+        document.getElementById("btn").innerText="Marked as completed"
+    }
+</script>
